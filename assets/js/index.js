@@ -1,32 +1,22 @@
 const changeModeLight = document.querySelector(".light")
 const changeModeDark = document.querySelector(".dark")
-const changeTitle = document.querySelector(".title-mode")
 const changeColorContainer = document.querySelector(".container")
-const imageDark = document.querySelector(".image-dark")
-const imageLight = document.querySelector(".image-light")
+const changeTitle = document.querySelector(".title-mode")
+const changeMode = document.querySelector(".changeMode")
 
 
-changeModeLight.addEventListener("click", () => {
-  changeColorContainer.classList.remove("dark-mode")
-  changeTitle.classList.remove("title-dark")
-  changeTitle.textContent = 'Modo Light'
-
-  if(imageLight.src.match('./assets/images/Vector.png')) {
-    imageDark.src = './assets/images/ball.png'
-  } else {
-    imageLight.src ='./assets/images/Vector.png'
-  }
-  
-})
-
-changeModeDark.addEventListener("click", () => {
-  changeColorContainer.classList.add("dark-mode")
-  changeTitle.classList.add("title-dark")
-  changeTitle.textContent = 'Modo Dark'
-
-  if(imageDark.src.match('./assets/images/moon.png')) {
-    imageLight.src = './assets/images/ball.png'
-  } else {
-    imageDark.src ='./assets/images/moon.png'
+changeMode.addEventListener("click", () => {
+  if(changeMode) {
+    changeColorContainer.classList.toggle("dark-mode")
+    changeTitle.classList.toggle("title-dark")
+    changeModeLight.classList.toggle('image-ball')
+    changeModeDark.classList.toggle('image-ball-check')
+    
+    if(changeColorContainer.classList.contains('dark-mode')) {
+      changeTitle.innerHTML = 'Modo Dark'
+    } else {
+      changeTitle.innerHTML = 'Modo Light'
+      
+    }
   }
 })

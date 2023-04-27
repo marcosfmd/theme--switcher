@@ -1,5 +1,3 @@
-
-
 :root {
 	--dark: #292C35;
 	--light: #F1F1F1;
@@ -46,6 +44,14 @@
   cursor: pointer;
 }
 
+.image-ball {
+  display: none;
+}
+
+.image-ball-check {
+  display: block;
+}
+
 .title-mode {
   color: var(--label);
   font-size: 28px;
@@ -56,5 +62,3 @@
 .title-dark {
   color: var(--light);
 }
-
-
